@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WolfAuction - Workshop Gratuito de Subastas en EE. UU.</title>
+    
+    <!-- Metatags SEO -->
+    <meta name="description" content="Regístrate gratis en el próximo workshop de WolfAuction. Aprende a convertir subastas en un negocio rentable con herramientas prácticas y un enfoque directo.">
+    <meta name="keywords" content="subastas, activos, estados unidos, inversión, negocios, ganancias, wolfauction, curso, workshop, mentoría">
+
+    <!-- Open Graph Tags (para redes sociales como Facebook y WhatsApp) -->
+    <meta property="og:title" content="WolfAuction - Workshop Gratuito: Conviértete en un Experto en Subastas">
+    <meta property="og:description" content="No te pierdas nuestro workshop gratuito. Te daremos las herramientas para empezar a generar ingresos con subastas de activos en EE. UU.">
+    <meta property="og:image" content="https://www.tu-dominio.com/logo/Logo-WolfAuction.png">
+    <meta property="og:url" content="https://www.tu-dominio.com/workshop.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WolfAuction - Workshop Gratuito: Conviértete en un Experto en Subastas">
+    <meta name="twitter:description" content="No te pierdas nuestro workshop gratuito. Te daremos las herramientas para empezar a generar ingresos con subastas de activos en EE. UU.">
+    <meta name="twitter:image" content="https://www.tu-dominio.com/logo/Logo-WolfAuction.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://www.tu-dominio.com/favicon.png">
+
+    <!-- Fuente legible en móvil -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c1016;
+            --ink: #eaf0f6;
+            --muted: #a9b2bd;
+            --brand: #28c0ff;
+            --brand-2: #b44dff;
+            --card: #121822;
+            --ok: #ffd166;
+            --maxw: 1120px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+            color: var(--ink);
+            background:
+                radial-gradient(1200px 600px at 80% -10%, rgba(180, 77, 255, .22), transparent 50%),
+                radial-gradient(900px 500px at -10% 10%, rgba(40, 192, 255, .22), transparent 50%),
+                linear-gradient(180deg, #0b0f14, #0c1016 30%, #0b0f14 100%);
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        .wrap {
+            max-width: var(--maxw);
+            margin-inline: auto;
+            padding: clamp(14px, 3.4vw, 28px)
+        }
+
+        .hero {
+            padding-top: clamp(26px, 6vw, 72px);
+            text-align: center
+        }
+
+        .title {
+            margin: 0 0 .45em;
+            font-weight: 900;
+            font-size: clamp(28px, 7vw, 56px);
+            letter-spacing: -.02em;
+            line-height: 1.1;
+            background: linear-gradient(90deg, #ffffff 0%, #eef9ff 22%, var(--brand) 55%, var(--brand-2) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .subtitle {
+            margin: 0 auto 1.25rem;
+            max-width: 60ch;
+            color: var(--muted);
+            font-size: clamp(14px, 3.8vw, 18px);
+            line-height: 1.6;
+        }
+
+        .video-card {
+            background: var(--card);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 18px;
+            padding: clamp(10px, 2.4vw, 14px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+            margin: 0 auto clamp(16px, 3vw, 24px);
+            max-width: 960px;
+        }
+
+        @media (max-width:640px) {
+            .video-card {
+                margin-left: calc(50% - 50vw);
+                margin-right: calc(50% - 50vw);
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+            }
+        }
+
+        .ratio {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000
+        }
+
+        .ratio iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block
+        }
+
+        .watch-note {
+            max-width: 720px;
+            margin: 0 auto 10px;
+            color: var(--muted);
+            font-size: clamp(13px, 3.6vw, 16px);
+        }
+
+        /* TRUST: estrellas doradas, texto normal, todo centrado */
+        .trust {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 680px;
+        }
+
+        .trust .stars {
+            display: block;
+            font-size: clamp(18px, 5vw, 22px);
+            margin-bottom: 4px;
+            color: #ffd700;
+            /* solo las estrellas en dorado */
+            line-height: 1;
+        }
+
+        .trust .trust-note {
+            display: block;
+            font-size: clamp(13px, 3.8vw, 16px);
+            color: var(--ink);
+            opacity: .9;
+        }
+
+        /* Contenedor para el CTA principal */
+        .cta-container {
+            text-align: center;
+            margin: 0 auto clamp(16px, 3.4vw, 28px);
+            max-width: 760px;
+        }
+
+        /* Contenedor para el CTA de WhatsApp al final */
+        .cta-whatsapp-bottom {
+            text-align: center;
+            margin: clamp(28px, 5vw, 56px) auto;
+            max-width: 760px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .6em;
+            padding: clamp(14px, 3.6vw, 16px) clamp(16px, 4.2vw, 20px);
+            border-radius: 14px;
+            font-weight: 800;
+            font-size: clamp(15px, 4vw, 18px);
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: transform .15s ease, box-shadow .15s ease, border-color .2s ease, opacity .3s ease;
+            will-change: transform, opacity;
+        }
+
+        .btn:active {
+            transform: translateY(1px) scale(.99);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--brand), var(--brand-2));
+            color: #04131c;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, .35);
+            box-shadow: 0 10px 25px rgba(40, 192, 255, .28), 0 6px 18px rgba(180, 77, 255, .18);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 12px 30px rgba(40, 192, 255, .36), 0 8px 22px rgba(180, 77, 255, .22);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: #000;
+            text-shadow: none;
+            border-color: rgba(255, 255, 255, .14);
+            box-shadow: 0 0 10px rgba(37, 211, 102, 0.45);
+        }
+
+        .btn-whatsapp:hover {
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.65), 0 0 25px rgba(18, 140, 126, 0.35);
+        }
+
+        .hidden-delay {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .hidden-delay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Kicker/Encabezado de sección “Próximo Workshop” */
+        .section-kicker {
+            text-align: center;
+            margin: clamp(20px, 5vw, 32px) auto -6px;
+            font-weight: 900;
+            letter-spacing: .08em;
+            font-size: clamp(13px, 3.8vw, 16px);
+            text-transform: uppercase;
+            background: linear-gradient(90deg, var(--brand), var(--brand-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-kicker-box {
+            text-align: center;
+            margin: clamp(20px, 5vw, 28px) auto;
+            padding: 10px 16px;
+            font-weight: 800;
+            font-size: clamp(14px, 4vw, 18px);
+            text-transform: uppercase;
+            border: 2px solid var(--brand);
+            /* recuadro */
+            border-radius: 10px;
+            max-width: 320px;
+            color: var(--ink);
+            background: rgba(255, 255, 255, 0.04);
+            /* fondo sutil */
+        }
+
+        @media (max-width: 640px) {
+            .section-kicker-box {
+                max-width: 90%;
+                /* ocupa casi todo el ancho en móvil */
+            }
+        }
+
+        .date-wrap {
+            display: flex;
+            justify-content: center;
+            margin: clamp(22px, 6vw, 48px) 0;
+        }
+
+        .date-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 18px 20px;
+            border-radius: 18px;
+            position: relative;
+            background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02));
+            border: 1px solid rgba(255, 255, 255, .14);
+            box-shadow: 0 18px 50px rgba(0, 0, 0, .35);
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .date-card::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            background: conic-gradient(from 0deg, var(--brand), #7ed9ff, #fff, var(--brand-2), #8e5aff, var(--brand));
+            filter: blur(10px);
+            opacity: .25;
+            z-index: -1;
+            animation: spin 8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(1turn);
+            }
+        }
+
+        .day {
+            font-size: clamp(42px, 16vw, 100px);
+            font-weight: 900;
+            line-height: .82;
+            letter-spacing: -.03em;
+            background: linear-gradient(180deg, #fff, #a9eaff 60%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .month-year {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .month {
+            font-weight: 900;
+            font-size: clamp(22px, 6.6vw, 36px);
+            letter-spacing: .12em;
+            color: var(--brand-2);
+        }
+
+        .year {
+            margin-top: 2px;
+            font-weight: 700;
+            font-size: clamp(16px, 4.8vw, 22px);
+            color: var(--ink);
+            opacity: .9;
+        }
+
+        .features {
+            display: grid;
+            gap: 12px;
+            grid-template-columns: 1fr;
+            margin: 0 auto clamp(28px, 5vw, 56px);
+            max-width: 980px;
+        }
+
+        @media (min-width:720px) {
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 16px;
+            padding: clamp(16px, 3vw, 22px);
+            min-height: 140px;
+        }
+
+        .card h3 {
+            margin: 0 0 6px;
+            font-size: clamp(16px, 4vw, 20px)
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: clamp(13px, 3.4vw, 15px)
+        }
+
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, .06);
+            color: var(--muted);
+            padding: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .btn {
+                transition: none
+            }
+
+            .date-card::before {
+                animation: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="wrap hero" role="banner">
+        <h1 class="title">Domina las subastas y multiplica tu dinero en EE.UU.</h1>
+        <p class="subtitle">
+            Aprende a transformar cada Subasta en una oportunidad real de negocio; Compras inteligentes, Ventas rápidas
+            y Ganancias inmediatas.
+        </p>
+
+        <!-- VIDEO -->
+        <div class="video-card" aria-label="Video de presentación">
+            <div class="ratio">
+                <iframe src="https://www.youtube.com/embed/T0u_L24iOSs" loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen title="Workshop WolfAuction"></iframe>
+            </div>
+        </div>
+        <p class="watch-note">Mira el video para entender cómo funciona el método y cómo empezar hoy mismo.</p>
+
+        <!-- CTA principal -->
+        <div class="cta-container" role="group" aria-label="Opciones de registro">
+            <a id="cta-reservar" class="btn btn-primary hidden-delay" href="https://square.link/u/5J5oyJtM"
+                target="_blank" rel="noopener">
+                Reservar mi cupo
+            </a>
+        </div>
+
+        <!-- Trust centrado, responsive -->
+        <div class="trust" aria-label="Calificación promedio">
+            <p class="stars" aria-hidden="true">★ ★ ★ ★ ★</p>
+            <span class="trust-note">Recomendado por emprendedores reales</span>
+        </div>
+    </header>
+
+    <!-- Kicker encima de la fecha -->
+    <div class="wrap">
+        <div class="section-kicker-box" aria-hidden="true">Próximo Workshop Gratuito</div>
+    </div>
+
+    <!-- FECHA DESTACADA -->
+    <section class="date-wrap" aria-label="Fecha del workshop">
+        <div class="date-card">
+            <div class="day" aria-label="Día">26</div>
+            <div class="month-year">
+                <div class="month" aria-label="Mes">SEP</div>
+                <div class="year" aria-label="Año">8:00 PM</div>
+            </div>
+        </div>
+    </section>
+
+    <main class="wrap" role="main">
+        <section class="features" aria-label="Beneficios principales">
+            <article class="card">
+                <h3>Workshop en vivo</h3>
+                <p>Sesión práctica en directo con preguntas en tiempo real, ejemplos reales de subastas y hoja de ruta
+                    para tu primera compra.</p>
+            </article>
+            <article class="card">
+                <h3>Métodos claros y comprobados</h3>
+                <p>Plantillas, fórmulas y checklists para calcular tu oferta máxima, costos reales y margen antes de
+                    pujar.</p>
+            </article>
+        </section>
+
+        <!-- CTA de WhatsApp al final -->
+        <div class="cta-whatsapp-bottom">
+            <a id="cta-whatsapp" class="btn btn-whatsapp hidden-delay" href="https://wa.link/xbs33w" target="_blank"
+                rel="noopener">
+                Hablar por WhatsApp
+            </a>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        © <span id="y"></span> WolfAuction. Todos los derechos reservados.
+    </footer>
+    <!-- Meta Pixel Code -->
+    <script>
+        ! function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '814071654616690');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=814071654616690&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <script>
+        // Año automático en el footer
+        document.getElementById('y').textContent = new Date().getFullYear();
+
+        // Mostrar CTAs después de cierto tiempo
+        const reservar = document.getElementById('cta-reservar');
+        const whatsapp = document.getElementById('cta-whatsapp');
+
+        const reveal = el => {
+            el.classList.add('show');
+            el.animate(
+                [{
+                        transform: 'translateY(6px)',
+                        opacity: .6
+                    },
+                    {
+                        transform: 'translateY(0)',
+                        opacity: 1
+                    }
+                ], {
+                    duration: 320,
+                    easing: 'ease-out'
+                }
+            );
+        };
+
+        setTimeout(() => reveal(reservar), 180); // 3 minutos
+        setTimeout(() => reveal(whatsapp), 340); // 4 minutos
+        // Para pruebas rápidas, cambia arriba a 3000 y 4000 ms.
+    </script>
+</body>
+
+</html>
