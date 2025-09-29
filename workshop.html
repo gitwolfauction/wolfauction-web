@@ -5,31 +5,68 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>WolfAuction - Workshop Gratuito de Subastas en EE. UU.</title>
-    
-    <!-- Metatags SEO -->
-    <meta name="description" content="Regístrate gratis en el próximo workshop de WolfAuction. Aprende a convertir subastas en un negocio rentable con herramientas prácticas y un enfoque directo.">
-    <meta name="keywords" content="subastas, activos, estados unidos, inversión, negocios, ganancias, wolfauction, curso, workshop, mentoría">
 
-    <!-- Open Graph Tags (para redes sociales como Facebook y WhatsApp) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    
+    <meta name="description"
+        content="Regístrate gratis en el próximo workshop de WolfAuction. Aprende a convertir subastas en un negocio rentable con herramientas prácticas y un enfoque directo.">
+    <meta name="keywords"
+        content="subastas, activos, estados unidos, inversión, negocios, ganancias, wolfauction, curso online, mentoría, workshop, seminario">
+
     <meta property="og:title" content="WolfAuction - Workshop Gratuito: Conviértete en un Experto en Subastas">
-    <meta property="og:description" content="No te pierdas nuestro workshop gratuito. Te daremos las herramientas para empezar a generar ingresos con subastas de activos en EE. UU.">
+    <meta property="og:description"
+        content="No te pierdas nuestro workshop gratuito. Te daremos las herramientas para empezar a generar ingresos con subastas de activos en EE. UU.">
     <meta property="og:image" content="https://www.tu-dominio.com/logo/Logo-WolfAuction.png">
     <meta property="og:url" content="https://www.tu-dominio.com/workshop.html">
     <meta property="og:type" content="website">
 
-    <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="WolfAuction - Workshop Gratuito: Conviértete en un Experto en Subastas">
-    <meta name="twitter:description" content="No te pierdas nuestro workshop gratuito. Te daremos las herramientas para empezar a generar ingresos con subastas de activos en EE. UU.">
+    <meta name="twitter:description"
+        content="No te pierdas nuestro workshop gratuito. Te daremos las herramientas para empezar a generar ingresos con subastas de activos en EE. UU.">
     <meta name="twitter:image" content="https://www.tu-dominio.com/logo/Logo-WolfAuction.png">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://www.tu-dominio.com/favicon.png">
-
-    <!-- Fuente legible en móvil -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        ! function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '814071654616690');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=814071654616690&ev=PageView&noscript=1" /></noscript>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YT0RCBR4GR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-YT0RCBR4GR');
+    </script>
 
     <style>
         :root {
@@ -58,10 +95,12 @@
             margin: 0;
             font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
             color: var(--ink);
+            /* FONDO FIJO y RESPONSIVE */
             background:
                 radial-gradient(1200px 600px at 80% -10%, rgba(180, 77, 255, .22), transparent 50%),
                 radial-gradient(900px 500px at -10% 10%, rgba(40, 192, 255, .22), transparent 50%),
                 linear-gradient(180deg, #0b0f14, #0c1016 30%, #0b0f14 100%);
+            background-attachment: fixed;
         }
 
         img {
@@ -154,7 +193,6 @@
             font-size: clamp(18px, 5vw, 22px);
             margin-bottom: 4px;
             color: #ffd700;
-            /* solo las estrellas en dorado */
             line-height: 1;
         }
 
@@ -192,6 +230,8 @@
             cursor: pointer;
             transition: transform .15s ease, box-shadow .15s ease, border-color .2s ease, opacity .3s ease;
             will-change: transform, opacity;
+            text-decoration: none;
+            /* ELIMINA EL SUBRAYADO */
         }
 
         .btn:active {
@@ -253,18 +293,15 @@
             font-size: clamp(14px, 4vw, 18px);
             text-transform: uppercase;
             border: 2px solid var(--brand);
-            /* recuadro */
             border-radius: 10px;
             max-width: 320px;
             color: var(--ink);
             background: rgba(255, 255, 255, 0.04);
-            /* fondo sutil */
         }
 
         @media (max-width: 640px) {
             .section-kicker-box {
                 max-width: 90%;
-                /* ocupa casi todo el ancho en móvil */
             }
         }
 
@@ -397,7 +434,6 @@
             Descubre el inmenso <b>potencial</b> de las <b>subastas</b> y transforma tu futuro financiero. <b>Workshop Gratis.</b>
         </p>
 
-        <!-- VIDEO -->
         <div class="video-card" aria-label="Video de presentación">
             <div class="ratio">
                 <iframe src="https://www.youtube.com/embed/T0u_L24iOSs" loading="lazy"
@@ -407,33 +443,29 @@
         </div>
         <p class="watch-note">Mira el video para entender cómo funciona y cómo empezar hoy mismo.</p>
 
-        <!-- CTA principal -->
         <div class="cta-container" role="group" aria-label="Opciones de registro">
-            <a id="cta-reservar" class="btn btn-primary hidden-delay" href="https://wa.link/xbs33w"
+            <a id="cta-reservar" class="btn btn-primary hidden-delay" href="https://wa.link/zw4oo9"
                 target="_blank" rel="noopener">
                 Reservar mi cupo
             </a>
         </div>
 
-        <!-- Trust centrado, responsive -->
         <div class="trust" aria-label="Calificación promedio">
             <p class="stars" aria-hidden="true">★ ★ ★ ★ ★</p>
             <span class="trust-note">Recomendado por emprendedores reales</span>
         </div>
     </header>
 
-    <!-- Kicker encima de la fecha -->
     <div class="wrap">
         <div class="section-kicker-box" aria-hidden="true">Próximo Workshop Gratuito</div>
     </div>
 
-    <!-- FECHA DESTACADA -->
     <section class="date-wrap" aria-label="Fecha del workshop">
         <div class="date-card">
-            <div class="day" aria-label="Día">26</div>
+            <div class="day" aria-label="Día">02</div>
             <div class="month-year">
-                <div class="month" aria-label="Mes">SEP</div>
-                <div class="year" aria-label="Año">8:00 PM</div>
+                <div class="month" aria-label="Mes">OCT</div>
+                <div class="year" aria-label="Hora">8:00 PM</div>
             </div>
         </div>
     </section>
@@ -452,7 +484,6 @@
             </article>
         </section>
 
-        <!-- CTA de WhatsApp al final -->
         <div class="cta-whatsapp-bottom">
             <a id="cta-whatsapp" class="btn btn-whatsapp hidden-delay" href="https://wa.link/xbs33w" target="_blank"
                 rel="noopener">
@@ -464,42 +495,17 @@
     <footer role="contentinfo">
         © <span id="y"></span> WolfAuction. Todos los derechos reservados.
     </footer>
-    <!-- Meta Pixel Code -->
-    <script>
-        ! function (f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = !0;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '814071654616690');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=814071654616690&ev=PageView&noscript=1" /></noscript>
-    <!-- End Meta Pixel Code -->
-
+    
     <script>
         // Año automático en el footer
         document.getElementById('y').textContent = new Date().getFullYear();
 
-        // Mostrar CTAs después de cierto tiempo
+        // Lógica para mostrar los CTAs con un retraso y animación (ajustado a 3 y 4 segundos)
         const reservar = document.getElementById('cta-reservar');
         const whatsapp = document.getElementById('cta-whatsapp');
 
         const reveal = el => {
+            el.classList.remove('hidden-delay');
             el.classList.add('show');
             el.animate(
                 [{
@@ -516,10 +522,9 @@
                 }
             );
         };
-
-        setTimeout(() => reveal(reservar), 180); // 3 minutos
-        setTimeout(() => reveal(whatsapp), 340); // 4 minutos
-        // Para pruebas rápidas, cambia arriba a 3000 y 4000 ms.
+        
+        setTimeout(() => reveal(reservar), 21000); // Muestra el primer botón después de 3 segundos
+        setTimeout(() => reveal(whatsapp), 30000); // Muestra el segundo botón después de 4 segundos
     </script>
 </body>
 
