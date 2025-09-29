@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Gracias por reservar — Workshop WolfAuction</title>
+  <meta name="description" content="Página de agradecimiento, acceso a calendarios, soporte y preparación para el Workshop.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0c1016;
+      --ink:#eaf0f6;
+      --muted:#a9b2bd;
+      --brand:#28c0ff;
+      --brand-2:#b44dff;
+      --card:#121822;
+      --ok:#27e48f;
+      --border:rgba(255,255,255,.12);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--ink);
+      background:
+        radial-gradient(900px 500px at 110% -10%, rgba(180,77,255,.22), transparent 50%),
+        radial-gradient(900px 500px at -10% 10%, rgba(40,192,255,.22), transparent 50%),
+        linear-gradient(180deg,#0b0f14,#0c1016 30%,#0b0f14 100%);
+      min-height:100svh;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:20px;
+    }
+    .page{ width:100%; max-width:900px; display:grid; gap:18px; }
+    .card{
+      width:100%;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--border);
+      border-radius:18px;
+      box-shadow:0 20px 60px rgba(0,0,0,.35);
+      padding:22px;
+    }
+    .hero{ text-align:center; padding:28px 22px; }
+    h1{
+      margin:0 0 8px;
+      font-size:clamp(22px,5vw,30px);
+      font-weight:800;
+      background:linear-gradient(90deg,var(--brand),var(--brand-2));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .lead{
+      margin:0 auto 16px; color:var(--muted);
+      font-size:clamp(14px,3.6vw,16px); line-height:1.55;
+      text-wrap:balance; max-width:60ch;
+    }
+    .chips{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:8px 0 2px; }
+    .chip{
+      display:inline-flex; align-items:center; gap:.6em;
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid var(--border);
+      padding:10px 14px; border-radius:12px; font-size:14px; color:var(--ink);
+    }
+    .chip svg { height: 1.2em; width: auto; vertical-align: middle; } /* Estilo para el SVG */
+    .when{ text-align:center; margin:12px 0 18px; font-weight:600; font-size:clamp(15px,3.8vw,18px); }
+    .date-display { 
+        font-size: clamp(18px, 4.5vw, 24px); 
+        font-weight: 800; 
+        margin-top: 15px; 
+        margin-bottom: 5px;
+        color: var(--brand); /* Color para la fecha */
+    }
+    .time-display {
+        font-size: clamp(16px, 4vw, 20px);
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: var(--ink); /* Color para la hora */
+    }
+
+
+    .btns{ display:grid; gap:12px; grid-template-columns:1fr; margin-top:12px; max-width:760px; margin-inline:auto; }
+    @media (min-width:640px){ .btns{ grid-template-columns:1fr 1fr 1fr; } }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:.6em;
+      padding:14px 18px; border-radius:12px; font-weight:800; font-size:16px;
+      text-decoration:none; cursor:pointer; border:1px solid transparent;
+      transition:transform .15s ease, box-shadow .15s ease, border-color .2s ease, opacity .3s ease;
+      will-change:transform, opacity; color:#04131c;
+      background:linear-gradient(135deg,var(--brand),var(--brand-2));
+      box-shadow:0 10px 25px rgba(40,192,255,.28), 0 6px 18px rgba(180,77,255,.18);
+      text-align:center; min-height:48px;
+    }
+    .btn:hover{ transform:translateY(-2px); box-shadow:0 12px 30px rgba(40,192,255,.36), 0 8px 22px rgba(180,77,255,.22); }
+    .btn.ghost{ background:linear-gradient(135deg,#2a3242,#1a2230); color:var(--ink); border-color:var(--border); box-shadow:none; }
+    .btn.whatsapp{
+      background:linear-gradient(135deg,#25D366,#128C7E);
+      color:#052b1f;
+      box-shadow:0 10px 25px rgba(37,211,102,.25), 0 6px 18px rgba(18,140,126,.18);
+    }
+    .btn.whatsapp:hover{ box-shadow:0 12px 30px rgba(37,211,102,.35), 0 8px 22px rgba(18,140,126,.22); }
+
+    /* Checklist */
+    .section-title{ margin:0 0 12px; font-size:clamp(18px,4.6vw,22px); font-weight:800; letter-spacing:.01em; }
+    .sub{ margin:0 0 16px; color:var(--muted); font-size:15px; line-height:1.5; }
+    .checklist{ display:grid; gap:10px; grid-template-columns:1fr; }
+    @media (min-width:680px){ .checklist{ grid-template-columns:1fr 1fr; } }
+    .check{
+      display:flex; gap:12px; align-items:flex-start;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--border); border-radius:12px; padding:12px 14px;
+    }
+    .check::before{
+      content:"✔"; display:inline-grid; place-items:center;
+      width:24px; height:24px; min-width:24px; border-radius:8px;
+      background:rgba(39,228,143,.14); color:var(--ok); font-weight:800; margin-top:2px;
+    }
+    .check b{ display:block; margin-bottom:4px; font-size:15px; }
+    .check span{ color:var(--muted); font-size:14px; line-height:1.5; }
+
+    /* FAQs details/summary */
+    .faqs{ display:grid; gap:10px; }
+    details{ background:rgba(255,255,255,.03); border:1px solid var(--border); border-radius:12px; padding:12px 14px; }
+    summary{
+      list-style:none; cursor:pointer; font-weight:700;
+      display:flex; align-items:center; gap:10px;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    .caret{
+      display:inline-block; width:10px; height:10px;
+      border-right:2px solid var(--ink); border-bottom:2px solid var(--ink);
+      transform:rotate(-45deg); transition:transform .2s ease; opacity:.9;
+    }
+    details[open] .caret{ transform:rotate(45deg); }
+    .faq-content{ margin-top:8px; color:var(--muted); font-size:14px; line-height:1.55; }
+
+    .foot{ margin-top:6px; font-size:12px; color:var(--muted); text-align:center; }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <section class="card hero" role="region" aria-label="Gracias y calendarios">
+      <h1>¡Reserva confirmada!</h1>
+      <p class="lead">Tu acceso al <strong>Workshop WolfAuction</strong> está asegurado. Agrégalo a tu calendario y, si necesitas ayuda, contáctanos por WhatsApp.</p>
+
+      <div class="chips">
+        <div class="chip" aria-label="Plataforma del evento">
+          <svg fill="#000000" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path d="M48 12v24c0 1.104-.896 2-2 2H30.003L29.998 38c-1.637 0-3-.618-3-2V28c0-.612.388-1 .998-1h13.004c.61 0 .998.388.998 1v8c0 1.104-.896 2-2 2H18.002L18 38c-1.637 0-3-.618-3-2V28c0-.612.388-1 .998-1h13.004c.61 0 .998.388.998 1v8c0 1.104-.896 2-2 2H2V12c0-1.104.896-2 2-2h42c1.104 0 2 .896 2 2zM12 18.001a1.996 1.996 0 01-1.998 2V28c0 .612.388 1 .998 1h3.004c.61 0 .998-.388.998-1v-8c0-1.104-.896-2-2-2h-2zm18.002 0v2h-4v-2h4zM18.002 18v2h-4v-2h4zM42 18.001v2h-4v-2h4zM24.002 18v2h-4v-2h4zM6.002 24v2h-4v-2h4zM12.002 24v2h-4v-2h4zM18.002 24v2h-4v-2h4zM24.002 24v2h-4v-2h4zM30.002 24v2h-4v-2h4zM36.002 24v2h-4v-2h4zM42.002 24v2h-4v-2h4zM6.002 30v2h-4v-2h4zM12.002 30v2h-4v-2h4zM18.002 30v2h-4v-2h4zM24.002 30v2h-4v-2h4zM30.002 30v2h-4v-2h4zM36.002 30v2h-4v-2h4zM42.002 30v2h-4v-2h4zM6.002 36v2h-4v-2h4zM12.002 36v2h-4v-2h4zM18.002 36v2h-4v-2h4zM24.002 36v2h-4v-2h4zM30.002 36v2h-4v-2h4zM36.002 36v2h-4v-2h4zM42.002 36v2h-4v-2h4zM6.002 18v2h-4v-2h4zM24.002 18a1.996 1.996 0 01-1.998 2V28c0 .612.388 1 .998 1h3.004c.61 0 .998-.388.998-1v-8c0-1.104-.896-2-2-2h-2zM42 18a1.996 1.996 0 01-1.998 2V28c0 .612.388 1 .998 1h3.004c.61 0 .998-.388.998-1v-8c0-1.104-.896-2-2-2h-2z" fill="#2D8CFF"></path>
+            </g>
+          </svg>
+          Zoom Webinar
+        </div>
+      </div>
+
+      <p class="date-display">Jueves, 04 de Octubre de 2025</p>
+      <p class="time-display">8:00 – 10:00 p.m. (Hora Central — CDT)</p>
+
+      <div class="btns" role="group" aria-label="Acciones">
+        <a 
+          class="btn" 
+          target="_blank" 
+          rel="noopener"
+          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Workshop%20WolfAuction%20(Online)&dates=20250904T200000/20250904T220000&ctz=America/Chicago&details=Aprende%20a%20detectar%20oportunidades%20en%20subastas%2C%20comprar%20al%20precio%20justo%20y%20revender%20con%20ganancias.%20Acceso%20enviado%20por%20email.&location=Online"
+        >
+          Google Calendar
+        </a>
+
+        <a
+          class="btn ghost"
+          download="WolfAuction-Workshop.ics"
+          href="data:text/calendar;charset=utf-8,BEGIN%3AVCALENDAR%0AVERSION%3A2.0%0APRODID%3A-//WolfAuction//Workshop//ES%0ACALSCALE%3AGREGORIAN%0AMETHOD%3APUBLISH%0ABEGIN%3AVEVENT%0AUID%3Awolfauction-workshop-20250904-2000%40wolfauction%0ADTSTAMP%3A20250904T200000Z%0ADTSTART%3A20250905T010000Z%0ADTEND%3A20250905T030000Z%0ASUMMARY%3AWorkshop%20WolfAuction%20(Online)%0ADESCRIPTION%3AAprende%20a%20detectar%20oportunidades%20en%20subastas%2C%20comprar%20al%20precio%20justo%20y%20revender%20con%20ganancias.%20Acceso%20enviado%20por%20email.%0ALOCATION%3AOnline%0AEND%3AVEVENT%0AEND%3AVCALENDAR"
+        >
+          Apple Calendar
+        </a>
+
+        <a class="btn whatsapp" href="https://chat.whatsapp.com/FjbV6cDOwX09joyn4meHnC?mode=ems_share_c" target="_blank" rel="noopener">
+          Grupo WhatsApp
+        </a>
+      </div>
+
+      <p class="foot">© 2025 WolfAuction</p>
+    </section>
+
+    <section class="card" role="region" aria-label="Checklist de preparación">
+      <h2 class="section-title">Checklist para llegar listo</h2>
+      <p class="sub">Asegura la mejor experiencia y arranca sin contratiempos.</p>
+
+      <div class="checklist">
+        <div class="check"><div><b>Equipo y conexión</b><span>Computadora o tablet con micrófono. Prueba tu audio/video y usa Wi‑Fi estable (idealmente por cable o cerca del router).</span></div></div>
+        <div class="check"><div><b>Espacio sin distracciones</b><span>Un lugar tranquilo y con audífonos. Ten a mano agua y cuaderno para apuntes.</span></div></div>
+        <div class="check"><div><b>Accesos y enlaces</b><span>Guarda el enlace del evento y agrega el recordatorio al calendario. Revisa tu correo 15 minutos antes.</span></div></div>
+        <div class="check"><div><b>Herramientas del Workshop</b><span>Tendremos plantillas y fórmulas. Si puedes, ten abierto Google Sheets/Excel para practicar.</span></div></div>
+        <div class="check"><div><b>Objetivo claro</b><span>Piensa en tu primer nicho de subasta (autos, pallets, storage, biomédico) y tu objetivo a 30 días.</span></div></div>
+        <div class="check"><div><b>Plan de acción</b><span>Reserva 30–45 min después del Workshop para implementar tu primer paso mientras está fresco.</span></div></div>
+      </div>
+    </section>
+
+    <section class="card" role="region" aria-label="Preguntas frecuentes">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <div class="faqs">
+        <details>
+          <summary><span class="caret"></span> ¿Cómo recibo el enlace de acceso?</summary>
+          <div class="faq-content">Te enviaremos el enlace por correo al email con el que realizaste el pago. Revisa spam/promociones. Si no llega en 10 minutos, escríbenos por WhatsApp.</div>
+        </details>
+        <details>
+          <summary><span class="caret"></span> ¿La sesión queda grabada?</summary>
+          <div class="faq-content">Sí, tendrás acceso a la grabación por tiempo limitado. Compartiremos el enlace por correo tras el Workshop.</div>
+        </details>
+        <details>
+          <summary><span class="caret"></span> ¿Qué necesito para participar?</summary>
+          <div class="faq-content">Conexión estable, dispositivo con audio, y ganas de aprender. Recomendamos cuaderno/Google Docs para apuntes y Google Sheets/Excel para practicar.</div>
+        </details>
+        <details>
+          <summary><span class="caret"></span> ¿Puedo hacer preguntas en vivo?</summary>
+          <div class="faq-content">Claro. Tendremos espacio de Q&A y responderemos dudas específicas sobre tu caso y nicho de interés.</div>
+        </details>
+        <details>
+          <summary><span class="caret"></span> ¿Qué pasa si no puedo asistir a esa hora?</summary>
+          <div class="faq-content">Conservas la grabación (por tiempo limitado). Además, podrás enviarnos tus preguntas por WhatsApp para incluirlas en el Q&A.</div>
+        </details>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
