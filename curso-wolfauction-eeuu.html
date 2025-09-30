@@ -147,12 +147,10 @@
         .cta-button {
             transition: all .3s ease;
             box-shadow: 0 0 15px var(--brand), 0 0 30px var(--brand-2);
-            /* Glow estático */
         }
 
         .cta-button:hover {
             box-shadow: 0 0 20px var(--brand), 0 0 40px var(--brand-2);
-            /* Glow en hover */
         }
 
         .animate-vibrate {
@@ -244,7 +242,6 @@
             }
         }
 
-        /* === ESTILO PARA LA IMAGEN PRINCIPAL (BORDE ILUMINADO) === */
         .image-glow-container {
             position: relative;
             padding: 4px;
@@ -260,12 +257,14 @@
             display: block;
         }
 
-        /* Ajuste del max-width para centrado */
         .header-content-wrapper {
             max-width: 1200px;
             margin: 0 auto;
         }
     </style>
+
+    <!-- === Estilo global unificado: se carga al FINAL para unificar apariencia === -->
+    <link rel="stylesheet" href="assets/css/wolf.css">
 </head>
 
 <body class="antialiased">
@@ -294,7 +293,7 @@
             </div>
 
             <div id="cta-container" class="mt-8 mb-4 hidden">
-                <a href="https://square.link/u/5J5oyJtM" id="cta-button"
+                <a href="https://square.link/u/ruzRuwIN" id="cta-button"
                     class="cta-button inline-block px-8 py-4 font-bold rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-r from-cyan-500 to-blue-500 text-white">
                     Obtener cupo!
                 </a>
@@ -386,7 +385,7 @@
             </div>
 
             <div id="cta-course-container" class="mt-12 text-center animate-on-scroll hidden">
-                <a href="https://square.link/u/5J5oyJtM"
+                <a href="https://square.link/u/ruzRuwIN"
                     class="cta-button inline-block px-8 py-4 font-bold rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-r from-cyan-500 to-blue-500 text-white">
                     Obtener cupo!
                 </a>
@@ -455,7 +454,7 @@
             setTimeout(() => {
                 ctaContainer.classList.remove('hidden');
                 ctaCourseContainer.classList.remove('hidden');
-            }, 1000); // 5 segundos de retraso
+            }, 1000);
 
             // Animaciones al hacer scroll
             const observer = new IntersectionObserver((entries) => {

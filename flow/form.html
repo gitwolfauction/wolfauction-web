@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro | WolfAuction</title>
+  <!-- Página de flujo: sin SEO -->
+  <meta name="robots" content="noindex,nofollow" />
+
+  <!-- Fuente para consistencia -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
+
+  <!-- Estilo global unificado -->
+  <link rel="stylesheet" href="../assets/css/wolf.css">
+
+  <style>
+    :root { --wa-card:#121822; --wa-border:rgba(255,255,255,.12); --wa-muted:#a9b2bd; --wa-ink:#eaf0f6; }
+    html, body { height: 100%; }
+    * { box-sizing: border-box; }
+
+    body{
+      margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      color:var(--wa-ink);
+      background:
+        radial-gradient(900px 480px at 90% -10%, rgba(180,77,255,.16), transparent 50%),
+        radial-gradient(800px 480px at -10% 10%, rgba(40,192,255,.16), transparent 50%),
+        linear-gradient(180deg, #0b0f14, #0c1016 30%, #0b0f14 100%);
+      min-height:100svh; display:grid; place-items:center; padding:clamp(16px,3vw,32px);
+    }
+
+    .wrap { width:100%; max-width:860px; }
+    .card{
+      background:var(--wa-card);
+      border:1px solid var(--wa-border);
+      border-radius:18px;
+      box-shadow:0 18px 50px rgba(0,0,0,.35);
+      overflow:hidden;
+    }
+    .header{
+      padding:18px 22px;
+      border-bottom:1px solid var(--wa-border);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    }
+    .title{ margin:0; font-weight:900; letter-spacing:-.01em; font-size:clamp(20px,4.6vw,28px); }
+    .subtitle{ margin:.25rem 0 0; color:var(--wa-muted); font-size:clamp(12px,3.5vw,14px); }
+    .content{ padding:20px; }
+
+    form{ display:grid; gap:14px; }
+
+    /* Grids responsivas */
+    .grid-2{ display:grid; gap:14px; grid-template-columns:1fr 1fr; }
+    .grid-3{ display:grid; gap:14px; grid-template-columns:2fr 1fr 1fr; }
+    /* Permite que las celdas encojan dentro del grid (evita desbordes/solapes) */
+    .grid-2 > div, .grid-3 > div { min-width: 0; }
+
+    @media (max-width: 860px){
+      .grid-3{ grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px){
+      .grid-2, .grid-3{ grid-template-columns:1fr; }
+    }
+
+    label{ font-weight:600; font-size:14px; display:block; }
+    input, select{
+      display:block;
+      width:100%; max-width:100%;
+      margin-top:6px; padding:12px 12px;
+      border-radius:12px; border:1px solid var(--wa-border);
+      background:#0c1016; color:var(--wa-ink);
+      outline:none; transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    input:focus, select:focus{
+      border-color: rgba(110,231,255,.7);
+      box-shadow: 0 0 0 3px rgba(110,231,255,.2);
+    }
+
+    /* Evita que los inputs con textos largos rompan el layout */
+    input, select { min-width: 0; }
+
+    .row{ display:flex; align-items:center; gap:10px; }
+    .row label { margin: 0; }
+    .hint{ color:var(--wa-muted); font-size:12px; margin-top:4px; }
+
+    .error{ display:none; color:#ff6b6b; font-weight:700; font-size:14px; }
+    .success{
+      display:none; padding:22px; text-align:center;
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border-top:1px solid var(--wa-border);
+    }
+
+    .btn{
+      appearance:none; border:1px solid var(--wa-border);
+      background:linear-gradient(90deg, #6ee7ff, #a78bfa);
+      color:#0a0f16; font-weight:800; border-radius:12px;
+      padding:12px 16px; cursor:pointer; width:100%;
+      transition: transform .15s ease, box-shadow .15s ease; 
+    }
+    .btn:active{ transform: translateY(1px) scale(.99); }
+
+    /* Animaciones de deslizamiento */
+    .slide-in-up{ animation: slideIn .45s ease-out forwards; }
+    .slide-out-up{ animation: slideOut .45s ease-in forwards; }
+    @keyframes slideIn{
+      from{ transform: translateY(14px); opacity:0 }
+      to{   transform: translateY(0);    opacity:1 }
+    }
+    @keyframes slideOut{
+      from{ transform: translateY(0);    opacity:1 }
+      to{   transform: translateY(-18px);opacity:0 }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card" aria-labelledby="form-title">
+      <header class="header">
+        <h1 id="form-title" class="title">Formulario de Registro</h1>
+        <p class="subtitle">Completa tus datos. Los campos con * son obligatorios.</p>
+      </header>
+
+      <div class="content">
+        <form id="waForm" novalidate>
+          <div class="grid-2">
+            <div>
+              <label for="nombre">Nombre *</label>
+              <input id="nombre" name="nombre" type="text" autocomplete="given-name" required />
+            </div>
+            <div>
+              <label for="apellido">Apellido</label>
+              <input id="apellido" name="apellido" type="text" autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="grid-3">
+            <div>
+              <label for="estado">Estado</label>
+              <select id="estado" name="estado">
+                <option value="">Selecciona un estado</option>
+                <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+                <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+                <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+                <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+                <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+                <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+                <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+                <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+                <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+                <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+                <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+                <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+                <option>WI</option><option>WY</option>
+              </select>
+              <p class="hint">Solo abreviación de 2 letras (ej. FL, TX, CA).</p>
+            </div>
+
+            <div>
+              <label for="zipcode">ZIP</label>
+              <input id="zipcode" name="zipcode" type="text" inputmode="numeric"
+                     pattern="^\d{5}(-\d{4})?$" placeholder="12345 o 12345-6789" />
+            </div>
+
+            <div>
+              <label for="telefono">Teléfono (EE. UU.) *</label>
+              <input id="telefono" name="telefono" type="tel" inputmode="tel" required
+                     placeholder="(305) 555-1234" />
+              <p class="hint">Acepta formatos con o sin +1. Validación NANP.</p>
+            </div>
+          </div>
+
+          <div>
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder="tu@correo.com" />
+          </div>
+
+          <div class="row">
+            <input id="whatsapp" name="whatsapp" type="checkbox" style="width:18px;height:18px" />
+            <label for="whatsapp">Deseo ser contactado también por WhatsApp</label>
+          </div>
+
+          <div id="waError" class="error" role="alert" aria-live="polite"></div>
+
+          <button id="waSubmit" type="submit" class="btn">Enviar registro</button>
+        </form>
+
+        <!-- Panel de éxito (aparece deslizándose tras enviar) -->
+        <div id="waSuccess" class="success" aria-live="polite">
+          <h3 style="margin:0 0 8px;font-weight:900">¡Gracias! 🎉</h3>
+          <p style="margin:0;color:var(--wa-muted)">Hemos recibido tus datos correctamente. Te contactaremos por email/WhatsApp.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function(){
+      const form = document.getElementById('waForm');
+      const btn  = document.getElementById('waSubmit');
+      const ok   = document.getElementById('waSuccess');
+      const err  = document.getElementById('waError');
+
+      // Endpoint real (Apps Script desplegado)
+      const ENDPOINT = 'https://script.google.com/macros/s/AKfycbxTnKeBqUrfbXsFLVjlNAXOaTyGYAd0D5etLPLlj-J3xJNIJU34zurv-lghiF5kKH4/exec';
+
+      // Validaciones
+      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      // Validación NANP (EE.UU./Canadá): 10 dígitos, área y central office no comienzan con 0/1.
+      function isValidUSPhone(input) {
+        let d = (input || '').replace(/\D/g, '');
+        if (d.length === 11 && d.startsWith('1')) d = d.slice(1);
+        if (d.length !== 10) return false;
+        const nanp = /^[2-9]\d{2}[2-9]\d{6}$/; // NXXNXXXXXX
+        return nanp.test(d);
+      }
+
+      function showError(msg){
+        err.textContent = msg;
+        err.style.display = 'block';
+      }
+      function clearError(){
+        err.textContent = '';
+        err.style.display = 'none';
+      }
+
+      function validate() {
+        clearError();
+        const nombre   = form.nombre.value.trim();
+        const email    = form.email.value.trim();
+        const telefono = form.telefono.value.trim();
+        const zip      = form.zipcode.value.trim();
+
+        if (!nombre)   return "El nombre es obligatorio.";
+        if (!email)    return "El email es obligatorio.";
+        if (!telefono) return "El teléfono es obligatorio.";
+
+        if (!emailRe.test(email)) return "El email no es válido.";
+        if (!isValidUSPhone(telefono)) return "Ingresa un teléfono válido de EE. UU. (NANP).";
+
+        if (zip && !/^\d{5}(-\d{4})?$/.test(zip)) return "El ZIP no es válido (usa 12345 o 12345-6789).";
+
+        return null;
+      }
+
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        const v = validate();
+        if (v) { showError(v); return; }
+
+        btn.disabled = true;
+        btn.textContent = 'Enviando…';
+
+        const payload = {
+          nombre:   form.nombre.value.trim(),
+          apellido: form.apellido.value.trim(),
+          estado:   form.estado.value.trim(),
+          zipcode:  form.zipcode.value.trim(),
+          email:    form.email.value.trim(),
+          telefono: form.telefono.value.trim(),
+          whatsapp: form.whatsapp.checked
+        };
+
+        try {
+          await fetch(ENDPOINT, {
+            method: 'POST',
+            mode: 'no-cors', // Compatible con Apps Script sin CORS
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          // Animación: el formulario se desliza y aparece el success
+          form.classList.add('slide-out-up');
+          setTimeout(() => {
+            form.style.display = 'none';
+            ok.style.display = 'block';
+            ok.classList.add('slide-in-up');
+          }, 450);
+
+          // Pixel opcional
+          if (typeof fbq === 'function') {
+            fbq('track', 'Lead', {
+              content_name: 'Formulario Registro',
+              content_category: 'Web',
+              value: 0.00, currency: 'USD'
+            });
+          }
+
+        } catch (e) {
+          showError('No se pudo enviar el registro. Intenta nuevamente.');
+        } finally {
+          btn.disabled = false;
+          btn.textContent = 'Enviar registro';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

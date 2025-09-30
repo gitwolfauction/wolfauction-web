@@ -1,0 +1,10 @@
+:root{--wa-bg:#0c1016;--wa-ink:#eaf0f6;--wa-muted:#9fb0c3;--wa-accent:#6ee7ff;--wa-accent-2:#a78bfa;--wa-card:#101621;--wa-border:rgba(255,255,255,.08);--wa-shadow:0 10px 30px rgba(0,0,0,.3)}
+html,body{background:var(--wa-bg);color:var(--wa-ink);font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,'Apple Color Emoji','Segoe UI Emoji'}
+.wa-container{max-width:1200px;margin-inline:auto;padding:clamp(16px,2vw,24px)}
+.wa-header{position:sticky;top:0;z-index:50;background:rgba(12,16,22,.7);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--wa-border)}
+.wa-header .wa-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.wa-logo{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.4px}
+.wa-logo img{width:36px;height:36px;object-fit:cover;border-radius:10px;border:1px solid var(--wa-border)}
+.wa-cta{padding:10px 16px;border:1px solid var(--wa-border);border-radius:12px}
+.wa-cta.primary{background:linear-gradient(90deg,var(--wa-accent),var(--wa-accent-2));color:#0a0f16;font-weight:700}
+.wa-footer{border-top:1px solid var(--wa-border);padding:32px 0;color:var(--wa-muted)}
